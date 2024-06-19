@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@{/css/style.css}">
+    <!-- Bootstrap CSS for table styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>List Quizzes</title>
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #4285F4; /* Warm blue background color */
+            color: #fff; /* White text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            padding: 30px;
+        }
+        .title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4285F4; /* Warm blue title color */
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            color: #333; /* Dark text color */
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4285F4; /* Warm blue header color */
+            color: #fff;
+        }
+        .submit-btn {
+            background-color: #4285F4; /* Warm blue button color */
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .submit-btn:hover {
+            background-color: #0052cc; /* Darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-content">
+        <h1 class="title">All Quizzes</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
+            <tr th:each="quiz : ${quizzes}">
+                <td th:text="${quiz.id}">1</td>
+                <td th:text="${quiz.title}">Quiz Title</td>
+                <td><a th:href="@{/web/quiz/view/{id}(id=${quiz.id})}" class="submit-btn">Take Quiz</a></td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

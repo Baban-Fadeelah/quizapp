@@ -1,0 +1,174 @@
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles for clean layout */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Centered container for quiz content */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+/* Main content area for quiz questions */
+.main-content {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main quiz title */
+.title {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #212529;
+}
+
+/* Question headings */
+.question {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #495057;
+}
+
+/* Paragraph text */
+p {
+    margin-bottom: 15px;
+    color: #6c757d;
+}
+
+/* Radio buttons for answer choices */
+.radio-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Submit button for the quiz */
+.submit-btn {
+    display: block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Hover effect for button */
+.submit-btn:hover {
+    background-color: #0069d9;
+}
+
+/* Additional professional touches */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #0062cc;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+}
+/* Reset margins and paddings for a clean slate */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Container with slight padding */
+.container-fluid.index-page {
+    padding: 50px 0;
+}
+
+/* Content section with subtle shadow and gradient */
+.content-section {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    background-image: linear-gradient(to right, #fff, #f5f5f5);
+}
+
+/* Image section with slight border and rounded corners */
+.image-section {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+/* Index content styling */
+.index-content {
+    text-align: center;
+}
+
+.index-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #212529;
+}
+
+.index-content p.lead {
+    color: #6c757d;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Style buttons with gradients and hover effects */
+.btn-primary {
+    background-image: linear-gradient(to right, #007bff, #0062cc);
+    border-color: #0062cc;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-image: linear-gradient(to right, #0069d9, #0050b2);
+    border-color: #0050b2;
+}
+
+.btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    transition: all}

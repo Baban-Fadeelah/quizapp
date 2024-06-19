@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@{/css/style.css}">
+    <!-- Bootstrap CSS for form and button styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>View Quiz</title>
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #4285F4; /* Warm blue background color */
+            color: #fff; /* White text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            padding: 30px;
+        }
+        .title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4285F4; /* Warm blue title color */
+        }
+        .question {
+            margin-bottom: 20px;
+            color: #333; /* Dark text color */
+        }
+        .radio-option {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .radio-option input[type="radio"] {
+            margin-right: 10px;
+        }
+        .submit-btn {
+            background-color: #4285F4; /* Warm blue button color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #0052cc; /* Darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-content">
+        <h1 class="title">Quiz: <span th:text="${quiz.title}">Quiz Title</span></h1>
+        <form action="#" th:action="@{/web/quiz/submit/{id}(id=${quiz.id})}" method="post">
+            <div th:each="question : ${questions}" class="question">
+                <p th:text="${question.questionText}">Question Text</p>
+                <div class="radio-option">
+                    <input type="radio" th:name="responses[__${question.id}__]" th:value="${question.option1}">
+                    <span th:text="${question.option1}">Option 1</span><br>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" th:name="responses[__${question.id}__]" th:value="${question.option2}">
+                    <span th:text="${question.option2}">Option 2</span><br>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" th:name="responses[__${question.id}__]" th:value="${question.option3}">
+                    <span th:text="${question.option3}">Option 3</span><br>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

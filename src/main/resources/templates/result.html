@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@{/css/style.css}">
+    <title>Quiz Result</title>
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #4285F4; /* Warm blue background color */
+            color: #fff; /* White text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            padding: 30px;
+        }
+        .title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4285F4; /* Warm blue title color */
+        }
+        p {
+            text-align: center;
+            font-size: 1.5em;
+            color: #333; /* Dark text color */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-content">
+        <h1 class="title">Your Score</h1>
+        <p>You scored: <span th:text="${score}">0</span> points.</p>
+    </div>
+</div>
+</body>
+</html>

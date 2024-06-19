@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="@{css/style.css}">
+    <title>Create Quiz</title>
+    <style>
+        /* Custom styles */
+        body {
+            background-color: #4285F4; /* Warm blue background color */
+            color: #333; /* White text color */
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff; /* White container background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .main-content {
+            padding: 30px;
+        }
+        .title {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #4285F4; /* Warm blue title color */
+        }
+        .submit-btn {
+            display: block;
+            background-color: #4285F4; /* Warm blue button color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .submit-btn:hover {
+            background-color: #0052cc; /* Darker shade for hover effect */
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="main-content">
+        <h1 class="title">Create Quiz</h1>
+        <form action="#" th:action="@{/web/quiz/create}" th:object="${quiz}" method="post">
+            <div class="form-group">
+                <label for="examType">Exam Type:</label>
+                <input type="text" id="examType" name="examType" class="form-control" th:field="*{examType}" required>
+            </div>
+            <div class="form-group">
+                <label for="numQ">Number of Questions:</label>
+                <input type="number" id="numQ" name="numQ" class="form-control" th:field="*{numQ}" required>
+            </div>
+            <div class="form-group">
+                <label for="title">Quiz Title:</label>
+                <input type="text" id="title" name="title" class="form-control" th:field="*{title}" required>
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn">Create Quiz</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

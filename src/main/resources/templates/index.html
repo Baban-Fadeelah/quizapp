@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring App index Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Your CSS styles here */
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container-fluid index-page">
+    <div class="row">
+        <div class="col-lg-6 content-section">
+            <div class="index-content">
+                <h1>Welcome to Science Online Quiz</h1>
+                <p class="lead">You can click on create quiz to set up quiz or click on view quiz to see available quizzes.</p>
+                <a th:href="@{/web/quiz/create}" class="btn btn-primary">Create Quiz</a>
+                <a th:href="@{/web/quiz/list}" class="btn btn-outline-primary">View Quizzes</a>
+            </div>
+        </div>
+        <div class="col-lg-6 image-section">
+            <img src="path/to/your/image.jpg" alt="Description of your image">
+        </div>
+    </div>
+</div>
+
+<!-- Additional scripts or JavaScript if needed -->
+
+</body>
+</html>
